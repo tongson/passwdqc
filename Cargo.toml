@@ -1,0 +1,19 @@
+[lib]
+crate-type =["cdylib"]
+
+[package]
+name = "passwdqc"
+version = "0.1.0"
+authors = ["Eduardo Tongson <propolice@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+zxcvbn = { version = "2" }
+serde = { version = "1.0.117", features = ["derive"] }
+serde_json = "1.0.59"
+
+[profile.release]
+panic = "abort"
+codegen-units = 1
+lto = true
+debug = false
