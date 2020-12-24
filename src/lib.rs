@@ -10,7 +10,7 @@ use zxcvbn::zxcvbn;
 
 #[no_mangle]
 pub extern "C" fn score(c: *const c_char) -> c_uint {
-  panic::set_hook(Box::new(move |_| eprintln!("panic: passwdqc.check()")));
+  panic::set_hook(Box::new(move |_| eprintln!("panic: passwdqc.score()")));
   #[derive(Deserialize)]
   struct Args {
     password: String,
